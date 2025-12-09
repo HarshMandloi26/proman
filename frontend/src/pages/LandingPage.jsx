@@ -166,11 +166,17 @@ export default function LandingPage() {
         )}
 
         {/* Review form */}
-        <div className="mt-6 rounded-2xl border border-[#E2E8F0] bg-white p-4 sm:p-5 shadow-sm">
-          <h3 className="text-sm sm:text-base font-semibold text-[#111827] mb-1">
+        <div className="mt-6 rounded-2xl border border-[#E2E8F0] bg-white p-4 sm:p-5 shadow-sm"
+        style={{
+                backgroundImage: `url('https://media.istockphoto.com/id/1276634862/photo/businessman-writing-yellow-five-star-to-customer-evaluation-service-and-product-marketing.jpg?s=612x612&w=0&k=20&c=EjzC8O8nFD_Qwu5JBz5xdnHSJBgMCXeR2ck4zqD988Y=')`, // 🔹 Add your image URL here later
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                
+              }}>
+          <h3 className="text-sm sm:text-base font-semibold text-[white] mb-1">
             Share your experience with ProMan
           </h3>
-          <p className="text-xs text-[#6B7280] mb-3">
+          <p className="text-xs text-[white] mb-3">
             Tell us how ProMan helps you plan, track, or deliver projects. Your
             review will appear in the list above.
           </p>
