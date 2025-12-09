@@ -78,17 +78,30 @@ export default function LandingPage() {
             <p className="text-xs uppercase tracking-wide text-[#6B7280] mb-2">
               PORTFOLIO SNAPSHOT
             </p>
-            <div className="aspect-video rounded-2xl bg-gradient-to-br from-[#E5F0FF] via-white to-[#ECFEFF] flex items-center justify-center">
-              <div className="space-y-3 max-w-xs text-center text-xs sm:text-sm text-[#4B5563]">
-                <p className="text-sm sm:text-base font-medium text-[#111827]">
+            <div
+              className="relative aspect-video rounded-2xl overflow-hidden flex items-center justify-center"
+              style={{
+                backgroundImage: `url('https://media.istockphoto.com/id/1411195926/photo/project-manager-working-on-laptop-and-updating-tasks-and-milestones-progress-planning-with.jpg?s=612x612&w=0&k=20&c=5A0CEsRbIrgnci0Q7LSxbrUZ1pliXy8C04ffpnjnVIw=')`, // 🔹 Add your image URL here later
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                opacity: 0.9,
+              }}
+            >
+              {/* Dark overlay to improve readability */}
+              <div className="absolute inset-0 bg-black/30 backdrop-brightness-90"></div>
+
+              {/* Foreground content */}
+              <div className="relative space-y-3 max-w-xs text-center text-xs sm:text-sm text-white drop-shadow-md px-3">
+                <p className="text-sm sm:text-base font-semibold">
                   See the whole portfolio at a glance.
                 </p>
-                <p>
+                <p className="font-light">
                   Track projects by stage, risk, and value – all from a clean,
                   intuitive dashboard that teams actually like to use.
                 </p>
               </div>
             </div>
+
             <p className="mt-3 text-xs text-[#6B7280]">
               Built with React and Tailwind, powered by Node.js and MongoDB.
             </p>
@@ -170,7 +183,6 @@ export default function LandingPage() {
         </div>
       </section>
       <hr />
-
 
       {/* Contact & Newsletter (same UI, but forms will now hit backend) */}
       <section className="grid gap-6 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
