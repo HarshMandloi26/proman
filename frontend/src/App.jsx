@@ -5,7 +5,7 @@ import AdminProjects from "./pages/admin/AdminProjects";
 import AdminClients from "./pages/admin/AdminClients";
 import AdminContacts from "./pages/admin/AdminContacts";
 import AdminSubscribers from "./pages/admin/AdminSubscribers";
-import AdminLogin from "./pages/admin/AdminLogin"; // ✅ add this
+import AdminLogin from "./pages/admin/AdminLogin"; // 
 
 function App() {
   const navLinkClass =
@@ -63,10 +63,10 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
 
-          {/* ✅ new login route */}
+          {/* new login route */}
           <Route path="/admin/login" element={<AdminLogin />} />
 
-          {/* ✅ protected admin area */}
+          {/* protected admin area */}
           <Route path="/admin" element={<AdminLayout />}>
             <Route path="projects" element={<AdminProjects />} />
             <Route path="clients" element={<AdminClients />} />

@@ -58,12 +58,12 @@ router.post("/public-review", async (req, res) => {
 
     const client = new Client({
       name,
-      designation: "Customer", // fixed label
+      designation: "Customer", 
       description,
       rating: safeRating,
       imageUrl: `https://api.multiavatar.com/${encodeURIComponent(
         name
-      )}.svg`, // fun avatar per name
+      )}.svg`, 
     });
 
     const saved = await client.save();
