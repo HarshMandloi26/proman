@@ -9,7 +9,18 @@ dotenv.config();
 const app = express();
 
 // Middlewares
-app.use(cors());
+const allowedOrigins = [
+  "https://proman-git-main-harsh-mandlois-projects.vercel.app/",
+];
+
+app.use(
+  cors({
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
 // Route imports
