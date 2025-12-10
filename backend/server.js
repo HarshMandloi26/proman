@@ -10,16 +10,27 @@ const app = express();
 
 // Middlewares
 const allowedOrigins = [
-  "https://proman-git-main-harsh-mandlois-projects.vercel.app/",
+  "https://proman-topaz.vercel.app",   // ✅ final production domain
+  "http://localhost:5173",             // ✅ local development
 ];
 
 app.use(
   cors({
-    origin: allowedOrigins,
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true); // allow Postman/cURL
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+      return callback(
+        new Error("CORS blocked for origin: " + origin),
+        false
+      );
+    },
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
+
 
 app.use(express.json());
 
